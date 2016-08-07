@@ -87,6 +87,8 @@
   }
 
   .dt-social-list {
+    cursor: default;
+
     .dt-icon-list {
       vertical-align: middle;
       height: @page-top-padding;
@@ -108,10 +110,10 @@
         transform: scale(1);
         transition: transform 75ms ease;
         transform-origin: 26%;
-      }
 
-      &:hover .fa {
-        transform: scale(1.7);
+        &:hover {
+          transform: scale(1.7);
+        }
       }
     }
   }
