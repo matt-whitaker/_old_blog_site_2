@@ -10,7 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const SRC_ROOT = 'src/';
 const EJS_GLOB = `${SRC_ROOT}**/*.ejs`;
 const LESS_GLOB = `${SRC_ROOT}**/*.less`;
-const LESS_EXCL_GLOB = `!${SRC_ROOT}_3rd-party/**/*.less`;
+const LESS_EXCL_GLOB = `!${SRC_ROOT}_3rd-party/font-awesome/**/*.less`;
 const IMAGE_GLOB = 'images/**/*';
 const YML_GLOB = `${SRC_ROOT}**/*.yml`;
 

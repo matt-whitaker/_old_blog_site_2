@@ -1,6 +1,14 @@
-@import '../../_variables/layout.less';
-@import '../../_variables/colors.less';
-@import '../../_variables/fonts.less';
+@import '../../_includes/layout.less';
+@import '../../_includes/colors.less';
+@import '../../_includes/fonts.less';
+@import '../../_includes/functions.less';
+
+@font-body-h1: @font-sans-serif;
+@font-body-h2: @font-sans-serif;
+@font-body-h3: @font-sans-serif;
+
+@font-body-p: @font-serif;
+@font-body-pre: @font-monospace;
 
 #main {
   box-sizing: border-box;
@@ -13,39 +21,40 @@
     margin: 15px 0;
   }
 
-  h1, h2, h3 {
-    font-family: @font-secondary;
-  }
-
   h1 {
+    font-family: @font-body-h1;
     font-size: 38px;
-
   }
 
   h2 {
+    font-family: @font-body-h2;
     text-transform: uppercase;
     font-size: 28px;
   }
 
   h3 {
+    font-family: @font-body-h3;
     text-transform: uppercase;
     font-size: 22px;
   }
 
   p {
+    font-family: @font-body-p;
     font-size: 24px;
-    font-family: @font-primary;
     line-height: 1.2em;
   }
 
   pre {
-    background-color: fadeout(#000000, 20%);
-    display: block;
-    color: #ffffff;
-    padding: 20px;
     font-family: @font-monospace;
 
+    display: block;
+
+    padding: 20px;
+
+    color: #ffffff;
     font-size: 18px;
+
+    background-color: fadeout(#000000, 20%);
   }
 
   .gutter {

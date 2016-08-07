@@ -1,21 +1,22 @@
-@import '../../_variables/layout.less';
-@import '../../_variables/colors.less';
-@import '../../_variables/functions.less';
-@import '../../_variables/fonts.less';
+@import '../../_includes/layout.less';
+@import '../../_includes/colors.less';
+@import '../../_includes/fonts.less';
+@import '../../_includes/functions.less';
 
 #header {
+  border-bottom: 2px solid @color-dark;
+
   z-index: 2;
   position: relative;
   height: 375px;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: 2px solid #000000;
 
   h1 {
-    .stroke(1px, #000000);
+    .stroke(1px, @color-dark);
+    font-family: @font-sans-serif;
 
     z-index: 2;
-    font-family: @font-secondary;
     font-weight: 500;
     position: absolute;
     right: 0;
@@ -35,7 +36,5 @@
       display: inline-block;
       max-width: 50%;
     }
-
-    //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 }
