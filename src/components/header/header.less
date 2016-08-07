@@ -1,3 +1,41 @@
+@import '../../_variables/layout.less';
+@import '../../_variables/colors.less';
+@import '../../_variables/functions.less';
+@import '../../_variables/fonts.less';
+
 #header {
-  display: block;
+  z-index: 2;
+  position: relative;
+  height: 375px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #000000;
+
+  h1 {
+    .stroke(1px, #000000);
+
+    z-index: 2;
+    font-family: @font-comfortaa;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    text-align: right;
+
+    font-size: 60px;
+
+    color: #ffffff;
+
+    padding: 20px;
+
+    span {
+      display: inline-block;
+      max-width: 50%;
+    }
+
+    //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
 }

@@ -4,6 +4,10 @@ menu:
   Archives: /archives
 rss: /atom.xml
 
+# Google Fonts
+fonts:
+  google: https://fonts.googleapis.com/css?family=Titillium+Web:400,700italic,900,700,600italic,600,400italic,300italic,300,200italic,200
+
 # Content
 excerpt_link: Read More
 fancybox: true
