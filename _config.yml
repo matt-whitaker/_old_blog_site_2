@@ -69,3 +69,5 @@ theme: dt
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+browsersync:
