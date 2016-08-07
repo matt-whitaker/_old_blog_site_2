@@ -55,6 +55,11 @@
     text-transform: lowercase;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .dt-nav-list {
     margin-right: 0;
     margin-left: auto;
@@ -62,7 +67,7 @@
     display: flex;
 
     > li:not(.dt-social-list) {
-      padding: 0 10px;
+      padding: 0 25px;
 
       &:hover {
         background-color: @color-dark-fade-1;
@@ -77,49 +82,52 @@
     line-height: @page-top-padding;
     font-size: 20px;
     font-family: @font-sans-serif;
-    margin-right: 25px;
+
     cursor: pointer;
   }
 
   .dt-social-list {
-    height: @page-top-padding;
-
     .dt-icon-list {
       vertical-align: middle;
       height: @page-top-padding;
       line-height: @page-top-padding;
     }
 
-    .fa {
-      cursor: pointer;
+    li {
       padding-right: 25px;
-      vertical-align: middle;
       display: inline-block;
-      font-size: 20px;
 
-      transform: scale(1);
-      transition: transform 75ms ease;
-      transform-origin: 15%;
+      .fa {
+        font-family: @font-awesome;
+        cursor: pointer;
 
-      &:hover {
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 20px;
+
+        transform: scale(1);
+        transition: transform 75ms ease;
+        transform-origin: 26%;
+      }
+
+      &:hover .fa {
         transform: scale(1.7);
       }
     }
   }
 
   .dt-dropdown {
-    margin-right: 75px;
+    margin-right: 50px;
     position: relative;
     display: block;
-    height: 100%;
     z-index: 99;
+    cursor: pointer;
   }
 
   .dt-dropbtn {
     font-family: @font-sans-serif;
     background: none;
     border: none;
-    cursor: pointer;
     height: 100%;
     font-size: 20px;
     padding: 0;
@@ -133,12 +141,12 @@
     position: absolute;
     min-width: 160px;
     right: 0;
+    font-size: 16px;
   }
 
   .dt-dropdown-content li {
-    padding: 0 0 0 6px;
     height: 40px;
-    line-height: 40px;
+
     text-decoration: none;
     display: block;
     color: white;
@@ -146,6 +154,13 @@
     background-color: @color-dark-fade-2;
     cursor: pointer;
     transition: background-color 150ms ease;
+
+    a {
+      padding: 0 0 0 6px;
+      line-height: 40px;
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   .dt-dropdown-content li:hover {
