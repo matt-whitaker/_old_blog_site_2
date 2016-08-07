@@ -20,7 +20,7 @@
   h1, h2, a {
     display: block;
     line-height: @navbar-height;
-    font-family: @font-titillium-web;
+    font-family: @font-primary;
     vertical-align: middle;
 
     span {
@@ -50,7 +50,7 @@
   h2 {
     padding-left: 15px;
 
-    opacity: 0.5;
+    color: fadeout(#000000, 50%);
 
     font-size: 20px;
     font-weight: 400;
@@ -79,7 +79,7 @@
     vertical-align: middle;
     line-height: @navbar-height;
     font-size: 20px;
-    font-family: @font-titillium-web;
+    font-family: @font-primary;
     margin-right: 25px;
     cursor: pointer;
   }
@@ -97,12 +97,15 @@
       cursor: pointer;
       padding-right: 25px;
       vertical-align: middle;
-      display: inline;
+      display: inline-block;
       font-size: 20px;
 
-      span {
-        font-family: @font-titillium-web;
-        display: inline-block;
+      transform: scale(1);
+      transition: transform 75ms ease;
+      transform-origin: 15%;
+
+      &:hover {
+        transform: scale(1.7);
       }
     }
   }
@@ -116,7 +119,7 @@
   }
 
   .dt-dropbtn {
-    font-family: @font-titillium-web;
+    font-family: @font-primary;
     background: none;
     border: none;
     cursor: pointer;
@@ -142,14 +145,14 @@
     text-decoration: none;
     display: block;
     color: white;
-    font-family: @font-titillium-web;
+    font-family: @font-primary;
     background-color: fadeout(#000000, 50%);
     cursor: pointer;
     transition: background-color 150ms ease;
   }
 
   .dt-dropdown-content li:hover {
-    background-color: #000000;
+    background-color: fadeout(#000000, 20%);
 
   }
 
