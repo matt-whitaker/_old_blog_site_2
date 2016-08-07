@@ -63,6 +63,15 @@
     margin-left: auto;
 
     display: flex;
+
+    > li:not(.dt-social-list) {
+      padding: 0 10px;
+
+      &:hover {
+        background-color: fadeout(#000000, 20%);
+        color: #ffffff;
+      }
+    }
   }
 
   .dt-nav-item {

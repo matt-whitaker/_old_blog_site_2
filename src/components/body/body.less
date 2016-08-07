@@ -1,3 +1,71 @@
+@import '../../_variables/layout.less';
+@import '../../_variables/colors.less';
+@import '../../_variables/fonts.less';
+
 #main {
+  box-sizing: border-box;
   padding: 30px;
+
+  width: 800px;
+  margin: 0 auto;
+
+  h1, h2, h3, p {
+    margin: 15px 0;
+  }
+
+  h1, h2, h3 {
+    font-family: @font-comfortaa;
+  }
+
+  h1 {
+    font-size: 38px;
+
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 28px;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 24px;
+    font-family: @font-titillium-web;
+    line-height: 1.2em;
+  }
+
+  pre {
+    background-color: fadeout(#000000, 20%);
+    display: block;
+    color: #ffffff;
+    padding: 20px;
+    font-family: @font-cutive-mono;
+
+    font-size: 18px;
+  }
+
+  .gutter {
+    border-radius: 3px 0 0 3px;
+    overflow: hidden;
+
+    pre {
+      padding-right: 10px;
+      .line:after {
+        content: '.';
+      }
+    }
+  }
+
+  .code {
+    border-radius: 0 3px 3px 0;
+    overflow: hidden;
+
+    pre {
+      padding-left: 10px;
+    }
+  }
 }
