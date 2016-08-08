@@ -1,5 +1,5 @@
 ---
-title: A Wonderful Time in JavaScript land when you make a Hexo blog.
+title: This is the work page - a case study on design
 image: /images/stone-pathway-wallpaper-1.jpg
 image_offset: -200px 50%
 ---

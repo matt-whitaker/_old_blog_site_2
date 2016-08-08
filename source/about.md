@@ -1,7 +1,8 @@
 ---
 title: Wonderful Time
-image: /images/stone-pathway-wallpaper-1.jpg
-image_offset: -200px 50%
+image: /images/IMG_2326.JPG
+image_offset: 0 45%
+image_size: 100%
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
