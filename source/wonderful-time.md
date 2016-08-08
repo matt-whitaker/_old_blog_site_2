@@ -1,5 +1,7 @@
 ---
 title: A Wonderful Time in JavaScript land when you make a Hexo blog.
+image: /images/stone-pathway-wallpaper-1.jpg
+image_offset: -200px 50%
 ---
 
 # Welcome

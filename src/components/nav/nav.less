@@ -3,7 +3,7 @@
 @import '../../_includes/fonts.less';
 @import '../../_includes/functions.less';
 
-#nav {
+#dt-nav {
   text-transform: uppercase;
   z-index: 98;
   background-color: @color-light;
@@ -18,41 +18,15 @@
 
   display: flex;
 
-  h1, h2, a {
+  a {
     display: block;
     line-height: @page-top-padding;
     font-family: @font-sans-serif;
-    vertical-align: middle;
 
     span {
       display: inline-block;
       vertical-align: middle;
     }
-  }
-
-  h1 {
-    padding-left: 25px;
-
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: .065em;
-
-    span {
-      &:first-child {
-        transform: translateY(-8px);
-      }
-    }
-  }
-
-  h2 {
-    padding-left: 15px;
-
-    color: @color-dark-fade-2;
-
-    font-size: 20px;
-    font-weight: 400;
-    font-style: italic;
-    text-transform: lowercase;
   }
 
   a {
@@ -67,7 +41,10 @@
     display: flex;
 
     > li:not(.dt-social-list) {
-      padding: 0 25px;
+
+      a {
+        padding: 0 25px;
+      }
 
       &:hover {
         background-color: @color-dark-fade-1;

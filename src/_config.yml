@@ -1,40 +1,26 @@
-# Header
-menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
-
 # Google Fonts
-fonts:
-  google: https://fonts.googleapis.com/css?family=Titillium+Web:400,700italic,900,700,600italic,600,400italic,300italic,300,200italic,200
+google:
+  fonts: https://fonts.googleapis.com/css?family=Titillium+Web:400,200italic,300,300italic,400italic,600,600italic,700,700italic,900,200|Cutive+Mono|Rasa:300,400,500,600,700
 
-# Content
-excerpt_link: Read More
-fancybox: true
+# Social Links
+social:
+  github: https://github.com/matt-whitaker
+  linkedin: https://www.linkedin.com/in/whitakermatt
+  twitter: https://twitter.com/__mattwhitaker
 
-# Sidebar
-sidebar: right
-widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
-
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
-
-# widget behavior
-archive_type: 'monthly'
-show_count: false
-
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+# Nav Links
+links:
+  - title: About
+    href: /about.html
+  - title: Archive
+    href: /archives
+  - title: Work
+    links:
+      - title: Project 1
+        href: /wonderful-time.html
+      - title: Link 2
+        href: /posts/hello-world
+      - title: Link 3
+        href: /posts/hello-world
+      - title: More...
+        href: /all-work.html

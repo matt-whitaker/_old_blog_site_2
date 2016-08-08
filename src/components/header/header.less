@@ -3,7 +3,7 @@
 @import '../../_includes/fonts.less';
 @import '../../_includes/functions.less';
 
-#header {
+#dt-header {
   border-bottom: 2px solid @color-dark;
 
   z-index: 2;
@@ -13,7 +13,9 @@
   box-sizing: border-box;
 
   h1 {
-    .stroke(1px, @color-dark);
+    box-sizing: border-box;
+
+    //.stroke(1px, @color-dark);
     font-family: @font-sans-serif;
 
     z-index: 2;
@@ -30,11 +32,11 @@
 
     color: @color-light;
 
-    padding: 20px;
-
     span {
       display: inline-block;
-      max-width: 50%;
+      max-width: 65%;
+      padding: 20px;
+      background-color: @color-dark-fade-2;
     }
   }
 }

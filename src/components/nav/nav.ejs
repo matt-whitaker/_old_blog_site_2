@@ -1,26 +1,18 @@
 <!--
     TODO: (Semantic Web fix) <h1/> and <h2/> need to be in within a <header/> element
 -->
-<nav id="nav">
-    <h1><span>Disjointed</span> <span>Thinking</span></h1>
-    <h2><span>A blog by Matt Whitaker</span></h2>
+<nav id="dt-nav">
+    <%- partial('nav-header/nav-header.ejs', { title: config.title, subtitle: config.subtitle }) %>
+
     <ul class="dt-nav-list">
-        <li class="dt-nav-item">About</li>
-        <li class="dt-nav-item">Archive</li>
-        <li class="dt-nav-item dt-dropdown">
-            <a class="dt-dropbtn">Work</a>
-            <ul class="dt-dropdown-content">
-                <li><a href="#">Project 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-            </ul>
-        </li>
-        <li class="dt-nav-item dt-social-list">
-            <ul class="dt-icon-list">
-                <li><a href="#" class="fa fa-github"><!--<span>matt-whitaker</span>--></a></li>
-                <li><a href="#" class="fa fa-linkedin-square"><!--<span>whitakermatt</span>--></a></li>
-                <li><a href="#" class="fa fa-twitter"><!--<span>__mattwhitaker</span>--></a></li>
-            </ul>
-        </li>
+        <% theme.links.forEach(function (link) { %>
+            <% if (link.href) { %>
+                <%- partial('nav-link.ejs', link) %>
+            <% } else if (link.links) { %>
+                <%- partial('nav-dropdown.ejs', link) %>
+            <% } %>
+        <% }); %>
+
+        <%- partial('nav-social.ejs') %>
     </ul>
 </nav>

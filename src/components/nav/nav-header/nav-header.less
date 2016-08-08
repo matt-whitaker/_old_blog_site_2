@@ -1,0 +1,46 @@
+@import '../../../_includes/layout.less';
+@import '../../../_includes/colors.less';
+@import '../../../_includes/fonts.less';
+@import '../../../_includes/functions.less';
+
+#dt-nav-header {
+  height: 100%;
+  display: flex;
+
+  h1, h2 {
+    display: block;
+    line-height: @page-top-padding;
+    font-family: @font-sans-serif;
+  }
+
+  h1 {
+    padding-left: 25px;
+
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: .065em;
+
+    span {
+      display: inline-block;
+
+      &:first-child {
+        transform: translateY(-4px);
+      }
+
+      &:last-child {
+        transform: translateY(4px);
+      }
+    }
+  }
+
+  h2 {
+    padding-left: 15px;
+
+    color: @color-dark-fade-2;
+
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+}
