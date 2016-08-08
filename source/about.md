@@ -7,34 +7,20 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## Quick Start
 
+<img src="/images/flower-wallpaper-24.jpg" title="What is this part?" alt="Hello World" style="max-width: 70%; margin: 0 auto; display: block"/>
+
 ### Create a new post
 
 ``` bash
 $ hexo new "My New Post"
+$ hexo generate
+$ hexo deploy
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
+### abc def
 
 ``` bash
-$ hexo server
+$ npm start
 ```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)

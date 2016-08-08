@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><%- config.title %></title>
+        <title><%- config.title %><%- page.title ? ' - ' + page.title : '' %></title>
         <script src="https://use.fontawesome.com/ad93da429e.js"></script>
         <link href='<%- theme.google.fonts %>' rel='stylesheet' type='text/css'>
         <%- css('/css/app.css') %>

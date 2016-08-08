@@ -9,6 +9,7 @@
 
 @font-body-p: @font-serif;
 @font-body-pre: @font-monospace;
+@font-body-table: @font-serif;
 
 #dt-main {
   box-sizing: border-box;
@@ -58,37 +59,102 @@
     }
   }
 
+  figure.highlight {
+    table {
+      width: 100%;
+    }
+
+    .gutter, .code {
+      background-color: @color-dark-fade-1;
+    }
+
+    .gutter {
+      border-radius: 3px 0 0 3px;
+      overflow: hidden;
+      width: 40px;
+
+      pre {
+        padding-right: 10px;
+        .line:after {
+          content: '.';
+        }
+      }
+    }
+
+    .code {
+      border-radius: 0 3px 3px 0;
+      overflow: hidden;
+
+      pre {
+        padding-left: 10px;
+      }
+    }
+  }
+
   pre {
     font-family: @font-monospace;
 
     display: block;
 
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
 
     color: @color-light;
     font-size: 18px;
+  }
 
+  code {
+    font-family: @font-monospace;
+    font-size: 18px;
     background-color: @color-dark-fade-1;
+    color: @color-light;
+    display: inline-block;
+    padding: 0 4px;
+    border-radius: 3px 3px 3px 3px;
   }
 
-  .gutter {
-    border-radius: 3px 0 0 3px;
-    overflow: hidden;
+  table {
+    font-size: 20px;
+    font-family: @font-body-table;
 
-    pre {
-      padding-right: 10px;
-      .line:after {
-        content: '.';
-      }
+    tr:nth-child(even):not(:first-of-type) {
+      background-color: @color-dark-alt-fade-3
+    }
+
+    th {
+      font-weight: 600;
+    }
+
+    td, th {
+      padding: 10px;
+      text-align: left;
     }
   }
 
-  .code {
-    border-radius: 0 3px 3px 0;
-    overflow: hidden;
+  strong {
+    font-weight: 600;
+  }
 
-    pre {
-      padding-left: 10px;
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    padding: 0 25px;
+    border-left: 4px solid @color-dark-alt-fade-3;
+
+    p {
+      font-weight: 300;
+      line-height: 1em;
+      font-size: 20px;
     }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  del {
+    text-decoration: line-through;
   }
 }
