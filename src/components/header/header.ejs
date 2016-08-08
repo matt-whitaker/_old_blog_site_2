@@ -1,3 +1,5 @@
-<header id="dt-header" style="background: url('<%- page.image %>'); background-position: <%- page.image_offset %>;">
-    <h1><span><%- page.title -%></span></h1>
-</header>
+<% if (!page.suppress_header) { %>
+    <header id="dt-header" style="background: url('<%- page.image %>'); background-position: <%- page.image_offset %>;">
+        <h1><span><%- page.title -%></span></h1>
+    </header>
+<% } %>
