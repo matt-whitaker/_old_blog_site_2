@@ -1,6 +1,7 @@
 .idea/
 node_modules/
-source/_drafts
 themes/
 public/
 db.json
+images
+source
