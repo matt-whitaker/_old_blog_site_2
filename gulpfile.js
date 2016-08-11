@@ -39,16 +39,13 @@ gulp.task('clean:assets', () => {
   return del([ './source', './images' ]);
 });
 
-let retrieveAssets;
 if (process.env.NODE_ENV === 'production') {
-  retrieveAssets = ['download:assets'];
-  gulp.task('download:assets', ['clean:assets'], () => {
+  gulp.task('retrieve:assets', ['clean:assets'], () => {
     return download();
   });
 } else {
-  retrieveAssets = ['deepcopy:assets'];
   // copy the assets from the depth of the machine... ie my dropbox folder
-  return gulp.task('deepcopy:assets', ['clean:assets'], () => {
+  gulp.task('retrieve:assets', ['clean:assets'], () => {
     // TODO: Dropbox location will change on different devices... figure that out
     return gulp.src('**/*', { cwd: '/Users/mattw/Dropbox/DisjointedThinking/'})
       .pipe(gulp.dest('./'));
@@ -90,8 +87,6 @@ gulp.task('clean:public', () => {
     PUBLIC_ROOT
   ]);
 });
-
-gulp.task('retrieve:assets', retrieveAssets);
 
 gulp.task('clean', ['clean:theme', 'clean:public']);
 
