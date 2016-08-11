@@ -6,7 +6,6 @@
 
 <div id="dt-archive">
     <% page.posts.each(function(post, i) { %>
-        <% console.log(Object.keys(post)); %>
         <div class="dt-archive-item">
             <a href="/<%- post.path %>">
                 <%- post.title %> - <%- post.date.format("MMM Do YYYY") %>

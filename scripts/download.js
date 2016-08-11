@@ -10,6 +10,7 @@ const mkdirp = require('mkdirp');
 const fs = require('fs');
 
 const { ACCESS_TOKEN } = process.env;
+
 const DT_PATH = '/DisjointedThinking';
 
 const ENTRY_TYPE_FOLDER = 'folder';
@@ -50,8 +51,6 @@ const download = (path, output) => {
     }
   };
 
-  mkdirp(_path.dirname(output));
-
   return new Promise((res, rej) => {
     request(options).pipe(fs.createWriteStream(output)).on('close', (error, response, body) => {
       if (error) {
@@ -63,29 +62,49 @@ const download = (path, output) => {
   });
 };
 
+module.exports = () => {
+  if (!ACCESS_TOKEN) {
+    throw(new Error("ACCESS_TOKEN MISSING!"));
+  }
+
+  return listFolderRecursive(DT_PATH)
+    .then(({ entries }) => {
+      const isFile = (entry) => entry['.tag'] === ENTRY_TYPE_FILE;
+      const isDirectory = (entry) => entry['.tag'] === ENTRY_TYPE_FOLDER;
+
+      const getFiles = _.filter(isFile);
+      const getDirectories = _.filter(isDirectory);
+      const getFilePath = (entry) => entry.path_lower;
+      const getFilePaths = _.map(getFilePath);
+
+      const files = getFiles(entries);
+      const paths = getFilePaths(files);
+
+      const directories = getDirectories(entries);
+
+      const normalizeDirectory = (dir) => dir.path_lower.replace('/disjointedthinking', '');
+      const normalizeDirectories = _.map(normalizeDirectory);
+
+      const normalizedDirectories = normalizeDirectories(directories);
+
+      for (let dir of normalizedDirectories) {
+        if (dir) {
+          mkdirp(`${process.cwd()}${dir}`)
+        }
+      }
+
+      const downloadAll = _.map((path) => {
+        const relativePath = _path.relative('/disjointedthinking', path);
+        const target = `${process.cwd()}/${relativePath}`;
+
+        return download(path, target);
+      });
 
 
-listFolderRecursive(DT_PATH)
-  .then((json) => {
-    const isFile = (entry) => entry['.tag'] === ENTRY_TYPE_FILE;
-    const isImage = (entry) => entry.path_lower.indexOf('/images/') > -1;
-    const isMarkdown = (entry) => entry.path_lower.indexOf('/source/') > -1;
-
-    const getFiles = _.filter(isFile);
-    const getImages = _.filter(isImage);
-    const getMds = _.filter(isMarkdown);
-
-    const files = getFiles(json.entries);
-    const images = getImages(files);
-    const mds = getMds(files);
-
-    const path = images[0].path_lower;
-    const relativePath = _path.relative('/disjointedthinking', path);
-
-    const target = `${process.cwd()}/${relativePath}`;
-
-    return download(path, target);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+      return Promise.all(downloadAll(paths));
+    })
+    .catch((error) => {
+      console.error(error);
+      throw error;
+    });
+}

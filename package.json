@@ -6,7 +6,8 @@
     "copy:ejs": "gulp copy:ejs",
     "compile:less": "gulp compile:less",
     "clean": "gulp clean && hexo clean",
-    "build": "npm run clean && gulp build",
+    "download": "gulp retrieve:assets",
+    "build": "npm run clean && npm run download && gulp build",
     "generate": "npm run build && hexo generate",
     "server": "hexo server",
     "start": "npm run generate && chokidar 'src/**/*' 'source/**/*.md' -c 'npm run generate'"
@@ -15,6 +16,7 @@
     "version": "3.2.2"
   },
   "dependencies": {
+    "gulp-watch": "^4.3.9",
     "hexo": "^3.2.0",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
