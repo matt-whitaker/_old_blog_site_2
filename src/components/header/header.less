@@ -12,6 +12,17 @@
   width: 100%;
   box-sizing: border-box;
 
+  &.date-shown {
+    margin-bottom: 30px;
+  }
+
+  h1, h2 {
+    span {
+      display: inline-block;
+      padding: 20px;
+    }
+  }
+
   h1 {
     box-sizing: border-box;
 
@@ -33,11 +44,16 @@
     color: @color-light;
 
     background-color: @color-dark-fade-2;
+  }
 
-    span {
-      display: inline-block;
-      padding: 20px;
-      border-radius: 5px 0 0 0;
-    }
+  h2 {
+    font-family: @font-sans-serif;
+    position: absolute;
+    right: 10px;
+    bottom: -65px;
+    font-weight: 300;
+    font-size: 30px;
+    color: @color-dark-alt-fade-1;
+    text-align: right;
   }
 }

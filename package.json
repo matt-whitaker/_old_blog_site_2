@@ -9,7 +9,7 @@
     "download": "gulp retrieve:assets",
     "build": "npm run clean && npm run download && gulp build",
     "generate": "npm run build && hexo generate",
-    "server": "hexo server",
+    "server": "hexo server -p 80",
     "start": "npm run generate && chokidar 'src/**/*' 'source/**/*.md' -c 'npm run generate'"
   },
   "hexo": {

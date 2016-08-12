@@ -2,14 +2,42 @@
     page.image = '/images/stone-pathway-wallpaper-1.jpg';
     page.image_offset = '0 20%'
     page.title = 'Archive';
+
+    page.posts.sort('date', 'desc').each((post, i) => {
+
+    });
+
+    let first = true;
+    const map = {};
 %>
 
 <div id="dt-archive">
-    <% page.posts.each(function(post, i) { %>
-        <div class="dt-archive-item">
-            <a href="/<%- post.path %>">
-                <%- post.title %> - <%- post.date.format("MMM Do YYYY") %>
-            </a>
-        </div>
+    <% page.posts.sort('date', 'desc').each((post, i) => { %>
+        <% let newYear = false; %>
+        <% const year = post.date.format('YYYY'); %>
+        <% const month = post.date.format('MMMM'); %>
+
+        <% if (!map[year]) { %>
+            <% if (!first) { %>
+                </ul>
+                <% first = false; %>
+            <% } %>
+            <h2><span><%- year %></span><div></div></h2>
+            <% newYear = true; %>
+            <% map[year] = {}; %>
+        <% } %>
+
+        <% if (!map[year][month]) { %>
+            <% if (!newYear) { %>
+                </ul>
+            <% } %>
+            <h3><%- month %></h3>
+            <ul>
+            <% map[year][month] = {} %>
+        <% } %>
+
+        <li class="dt-archive-item"><a href="<%- url_for(post.path) %>"><%- post.title %></a></li>
+
     <% }) %>
+    <ul>
 </div>
