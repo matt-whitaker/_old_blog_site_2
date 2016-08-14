@@ -1,6 +1,5 @@
 "use strict";
 
-// IvUq68oTMQMAAAAAAAAA21CGdyblOIX9ST-Hc9_-zkfnUwtIVPztQBcX-iQok4aA
 const _ = require('ramda');
 const execute = require('child_process').exec;
 const https = require('https');
