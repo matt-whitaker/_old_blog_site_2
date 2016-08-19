@@ -1,7 +1,14 @@
-<% const isPost = page.date && page.layout === 'post'; %>
+<%
+    const isPost = page.date && page.layout === 'post';
+    const hasTitle = !!page.title
+%>
+
 <% if (!page.suppress_header) { %>
-<header id="dt-header" style="background: url('<%- page.image %>'); <%- page.image_offset ? 'background-position: ' + page.image_offset : '' %>; <%- page.image_size ? 'background-size: ' + page.image_size : '' %>;" <%- isPost ? 'class="date-shown"' : '' %>>
-    <h1><span><%- page.title -%></span></h1>
+<header class="dt-header<%- isPost ? ' date-shown' : '' %>" style="background: url('<%- page.image %>'); <%- page.image_offset ? 'background-position: ' + page.image_offset : '' %>; <%- page.image_size ? 'background-size: ' + page.image_size : '' %>;">
+    <% if (hasTitle) { %>
+    <h1><span><%- page.title %></span></h1>
+    <% } %>
+
     <% if (isPost) { %>
     <h2>
         <span>

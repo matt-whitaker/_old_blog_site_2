@@ -24,3 +24,9 @@ links:
         href: /work/want-2-hack.html
       - title: More...
         href: /work.html
+
+# Homepage Highlights
+highlights:
+  - about.html
+  - work.html
+  - work/disjointed-thinking.html

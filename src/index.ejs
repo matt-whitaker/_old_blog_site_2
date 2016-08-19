@@ -1,7 +1,30 @@
 <%
-    page.image = 'images/IMG_2360.JPG';
-    page.image_offset = '-10% 30%'
-    page.image_size = '100%';
+    const R = getRamda();
+    const isHighlight = (page) => R.contains(page.path, theme.highlights);
+    const getHighlights = R.filter(isHighlight);
+
+    const highlights = getHighlights(site.pages.toArray());
+
+    page.image = '/images/stone-pathway-wallpaper-1.jpg';
 %>
 <%- page.content %>
-Hello World
+
+<div class="dt-index">
+    <% for (let i = 0; i < highlights.length; i++) { %>
+    <%- partial('components/highlight-card/highlight-card.ejs', highlights[i]) %>
+    <% } %>
+</div>
+
+
+
+
+
+<!--
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Drinking the <a href="https://twitter.com/hashtag/delicious?src=hash">#delicious</a> Carolina Pepper infused &quot;Poydras&quot; porter at <a href="https://twitter.com/GeauxBrew">@GeauxBrew</a>. Very <a href="https://twitter.com/hashtag/spicy?src=hash">#spicy</a>! <a href="https://t.co/9Q5LBJy3GX">pic.twitter.com/9Q5LBJy3GX</a></p>&mdash; Matt Whitaker (@__mattwhitaker) <a href="https://twitter.com/__mattwhitaker/status/759175373850415104">July 29, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/Seahawks">@Seahawks</a> Now THAT is a preseason win!! <a href="https://twitter.com/hashtag/GoHawks?src=hash">#GoHawks</a></p>&mdash; Matt Whitaker (@__mattwhitaker) <a href="https://twitter.com/__mattwhitaker/status/764609679741771776">August 13, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Can&#39;t stand this political climate. Turns out, there&#39;s a 3rd option! I&#39;m in! <a href="https://twitter.com/hashtag/TeamGov?src=hash">#TeamGov</a> <a href="https://twitter.com/hashtag/youin?src=hash">#youin</a> <a href="https://twitter.com/hashtag/election2016?src=hash">#election2016</a> <a href="https://t.co/9Tdb85GVov">https://t.co/9Tdb85GVov</a></p>&mdash; Matt Whitaker (@__mattwhitaker) <a href="https://twitter.com/__mattwhitaker/status/750366603108163584">July 5, 2016</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+-->
+

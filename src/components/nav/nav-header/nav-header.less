@@ -37,6 +37,7 @@
 
     span {
       display: inline-block;
+      transition: all 200ms;
 
       &:first-child {
         transform: translateY(-8px);
@@ -44,6 +45,15 @@
 
       &:last-child {
         transform: translateY(4px);
+      }
+    }
+
+    &:hover {
+      span {
+        &:first-child,
+        &:last-child {
+          transform: translateY(0);
+        }
       }
     }
 

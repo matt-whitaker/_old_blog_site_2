@@ -13,7 +13,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const watch = require('gulp-watch');
 const Hexo = require('hexo');
 
-const download = require('./scripts/download.js');
+const download = require('./utils/download.js');
 
 const SRC_ROOT = 'src/';
 const EJS_GLOB = `${SRC_ROOT}**/*.ejs`;

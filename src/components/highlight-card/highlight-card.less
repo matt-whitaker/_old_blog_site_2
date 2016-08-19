@@ -1,0 +1,32 @@
+@import '../../_includes/layout.less';
+@import '../../_includes/colors.less';
+@import '../../_includes/fonts.less';
+@import '../../_includes/functions.less';
+
+.dt-highlight-card {
+  margin: 0 1%;
+  flex-basis: 31.1%;
+
+  align-self: stretch;
+
+  background-color: @color-light;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  box-shadow: 2px 2px 4px 1px @color-dark-fade-1;
+  border-radius: 3px 3px 3px 3px;
+
+  font-size: 20px;
+  font-family: @font-sans-serif;
+  text-align: center;
+
+  > img {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  p {
+    padding: 10px 20px;
+  }
+}
