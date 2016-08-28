@@ -4,8 +4,9 @@
 @import '../../_includes/functions.less';
 
 .dt-highlight-card {
-  margin: 0 1%;
-  flex-basis: 31.1%;
+  display: block;
+  margin: 0 2%;
+  flex-basis: 29.1%;
 
   align-self: stretch;
 
@@ -21,12 +22,29 @@
   font-family: @font-sans-serif;
   text-align: center;
 
+  position: relative;
+  cursor: pointer;
+  z-index: 9;
+
+  transition: all 75ms;
+
+  &:hover {
+    transform: scale(1.15);
+    z-index: 20;
+  }
+
   > img {
     max-width: 100%;
     margin: 0;
   }
 
-  p {
+  p, h2 {
     padding: 10px 20px;
+  }
+
+  h2 {
+    font-family: @font-sans-serif;
+    font-weight: 400;
+    font-size: 20px;
   }
 }

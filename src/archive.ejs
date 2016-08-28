@@ -1,7 +1,5 @@
 <%
-    page.image = '/images/stone-pathway-wallpaper-1.jpg';
-    page.image_offset = '0 20%'
-    page.title = 'Archive';
+    Object.assign(page, theme.archive);
 
     let first = true;
     const map = {};
@@ -31,7 +29,7 @@
     <ul>
         <% map[year][month] = {} %>
     <% } %>
-        <li class="dt-archive-item"><a href="<%- url_for(post.path) %>"><%- post.title %></a> - <%- post.summary %></li>
+        <li class="dt-archive-item"><a href="<%- url_for(post.path) %>"><%- post.title %></a> - <%- post.blurb %></li>
 <% }) %>
     <ul>
 </div>

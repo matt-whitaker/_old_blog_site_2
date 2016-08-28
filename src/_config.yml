@@ -30,3 +30,14 @@ highlights:
   - about.html
   - work.html
   - work/disjointed-thinking.html
+
+homepage:
+  image: /images/seattle-1.png
+  image_offset: 0 20%
+  image_size: 100%
+  blurb: Homebrewed in Seattle, my ramblings <br/>on web development, the Pacific Northwest, <br/>and the occasional adventure.
+
+archive:
+  image: /images/stone-pathway-wallpaper-1.jpg
+  image_offset: 0 20%
+  title: Archive

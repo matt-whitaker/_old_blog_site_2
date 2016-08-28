@@ -1,17 +1,20 @@
+@import '../_includes/layout.less';
+@import '../_includes/colors.less';
+@import '../_includes/fonts.less';
+@import '../_includes/functions.less';
+
 .dt-index {
   width: 100%;
 
-  display: flex;
-  flex-wrap: wrap;
+  .dt-highlights {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 
-  .twitter-tweet {
-    margin: 0 1%;
-    align-self: center;
-    flex-basis: 31.1%;
-  }
-
-  .dt-highlight-card:nth-child(-n+3) {
-    margin-top: -250px;
-    z-index: 10;
+    .twitter-tweet {
+      margin: 0 1%;
+      align-self: center;
+      flex-basis: 31.1%;
+    }
   }
 }
