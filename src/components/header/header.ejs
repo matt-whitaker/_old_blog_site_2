@@ -4,15 +4,15 @@
     const hasBlurb = !!page.blurb;
 
     const headerStyle = [
-        page.image ? `background: url('${page.image}'); ` : ' ',
-        page.image_offset ? `background-position: ${page.image_offset}; ` : ' ',
-        page.image_size ? `background-size: ${page.image_size};` : ' '
+        page.image ? `background-image: url('${page.image}'); ` : ' ',
+        page.image_offset ? `background-position: ${page.image_offset}; ` : ' '
+//        page.image_size ? `background-size: ${page.image_size};` : ' '
     ].join('');
 %>
 
 <% if (!page.suppress_header) { %>
 <header class="dt-header<%- isPost ? ' date-shown' : '' %>" style="<%- headerStyle %>">
-    <% if (hasBlurb) { %>
+    <% if (hasBlurb && !isPost) { %>
         <div class="dt-blurb">
             <p>
                 <%- page.blurb %>
