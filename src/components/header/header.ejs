@@ -7,12 +7,12 @@
     <ul class="dt-nav-list">
 <% theme.links.forEach(function (link) { %>
     <% if (link.href) { %>
-        <%- partial('nav-link.ejs', link) %>
+        <%- partial('nav/link/link.ejs', link) %>
     <% } else if (link.links) { %>
-        <%- partial('nav-dropdown.ejs', link) %>
+        <%- partial('nav/dropdown/dropdown.ejs', link) %>
     <% } %>
 <% }); %>
 
-        <%- partial('nav-social.ejs') %>
+        <%- partial('nav/social/social.ejs') %>
     </ul>
 </nav>
