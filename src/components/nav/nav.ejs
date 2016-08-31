@@ -2,7 +2,7 @@
     TODO: (Semantic Web fix) <h1/> and <h2/> need to be in within a <banner/> element
 -->
 <nav id="dt-nav">
-    <%- partial('nav-header/nav-header.ejs', { title: config.title, subtitle: config.subtitle }) %>
+    <%- partial('title/title.ejs', { title: config.title, subtitle: config.subtitle }) %>
 
     <ul class="dt-nav-list">
 <% theme.links.forEach(function (link) { %>
