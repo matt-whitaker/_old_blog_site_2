@@ -3,16 +3,5 @@
 -->
 <nav id="dt-nav">
     <%- partial('title/title.ejs', { title: config.title, subtitle: config.subtitle }) %>
-
-    <ul class="dt-nav-list">
-<% theme.links.forEach(function (link) { %>
-    <% if (link.href) { %>
-        <%- partial('nav/link/link.ejs', link) %>
-    <% } else if (link.links) { %>
-        <%- partial('nav/dropdown/dropdown.ejs', link) %>
-    <% } %>
-<% }); %>
-
-        <%- partial('nav/social/social.ejs') %>
-    </ul>
+    <%- partial('nav/nav.ejs', { links: theme.links }) %>
 </nav>

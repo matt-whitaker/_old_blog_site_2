@@ -1,0 +1,11 @@
+<ul class="dt-nav-list">
+<% links.forEach(function (link) { %>
+    <% if (link.href) { %>
+    <%- partial('link/link.ejs', link) %>
+    <% } else if (link.links) { %>
+    <%- partial('dropdown/dropdown.ejs', link) %>
+    <% } %>
+<% }); %>
+
+    <%- partial('social/social.ejs') %>
+</ul>
