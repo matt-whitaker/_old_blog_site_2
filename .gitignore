@@ -5,3 +5,6 @@ public/
 db.json
 images
 source
+
+Icon*
+.DS_Store
