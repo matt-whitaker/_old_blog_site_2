@@ -17,6 +17,7 @@ const download = require('./utils/download.js');
 
 const SRC_ROOT = 'src/';
 const EJS_GLOB = `${SRC_ROOT}**/*.ejs`;
+const LESS_RESET_GLOB = `${SRC_ROOT}_3rd-party/reset.less`;
 const LESS_GLOB = `${SRC_ROOT}**/*.less`;
 const LESS_EXCL_GLOB = `!${SRC_ROOT}_3rd-party/font-awesome/**/*.less`;
 const IMAGE_GLOB = 'images/**/*';
@@ -68,7 +69,7 @@ gulp.task('copy:images', [], () => {
 });
 
 gulp.task('compile:less', () => {
-  return gulp.src([LESS_GLOB, LESS_EXCL_GLOB])
+  return gulp.src([LESS_RESET_GLOB, LESS_GLOB, LESS_EXCL_GLOB])
     .pipe(less(LESS_GLOB))
     .pipe(sourcemaps.init())
     .pipe(concat(DEST_CSS_FILENAME))
