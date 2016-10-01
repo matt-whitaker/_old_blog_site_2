@@ -1,4 +1,6 @@
 <a class="dt-highlight-card" href="<%- url_for(path) %>">
     <img src="<%- image %>" />
+<% if (typeof title !== 'undefined') { %>
     <h2 class="dt-highlight-card-title"><%- title %></h2>
+<% } %>
 </a>
