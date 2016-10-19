@@ -13,6 +13,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const watch = require('gulp-watch');
 const Hexo = require('hexo');
 
+require('dotenv').config();
+
 const download = require('./utils/download.js');
 
 const SRC_ROOT = 'src/';
@@ -47,9 +49,20 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // copy the assets from the depth of the machine... ie my dropbox folder
   gulp.task('retrieve:assets', ['clean:assets'], () => {
-    // TODO: Dropbox location will change on different devices... figure that out
-    return gulp.src('**/*', { cwd: '/Users/mattw/Dropbox/DisjointedThinking/'})
-      .pipe(gulp.dest('./'));
+    return Promise.all([
+      new Promise((res, rej) => {
+        gulp.src(['**/*', '!_config.yml'], { cwd: process.env.DROPBOX_PATH })
+          .pipe(gulp.dest('./'))
+          .on('end', res)
+          .on('error', console.error);
+      }),
+      new Promise((res, rej) => {
+        gulp.src('./source', { cwd: process.env.DROPBOX_PATH })
+          .pipe(gulp.dest('./'))
+          .on('end', res)
+          .on('error', console.error);
+      })
+    ])
   });
 }
 

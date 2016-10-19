@@ -14,7 +14,7 @@ links:
     href: /about.html
   - title: Archive
     href: /archive
-  - title: Work
+  - title: Projects
     links:
       - title: Project 1
         href: /posts/hello-world
@@ -24,6 +24,8 @@ links:
         href: /work/want-2-hack.html
       - title: More...
         href: /work.html
+  - title: Photos
+    href: /photos.html
 
 # Homepage Highlights
 highlights:
