@@ -1,7 +1,9 @@
 <%
     const R = getRamda();
 
-    const isHighlight = (page) => R.contains(page.path, theme.highlights);
+    const themeHighlights = R.map((h) => `${h}/index.html`, theme.highlights);
+
+    const isHighlight = (page) => R.contains(page.path, themeHighlights);
     const getHighlights = R.filter(isHighlight);
     const highlights = getHighlights(site.pages.toArray());
 
@@ -11,7 +13,6 @@
 <div class="dt-index">
     <div class="dt-highlights">
         <% for (let i = 0; i < highlights.length; i++) { %>
-
         <%- partial('components/highlight-card/highlight-card.ejs', highlights[i]) %>
         <% } %>
     </div>
