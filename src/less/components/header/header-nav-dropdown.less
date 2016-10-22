@@ -3,6 +3,60 @@
 @import "./../../_includes/functions.less";
 @import "./../../_includes/layout.less";
 
-.dt-header-nav-dropdown.less {
-  .header-section();
+.dt-header-nav-dropdown {
+  height: @header-height;
+  position: relative;
+  display: block;
+  z-index: 98;
+  cursor: pointer;
+
+  &:hover {
+    z-index: 99;
+
+    .dt-header-nav-dropdown-list {
+      max-height: 500px;
+    }
+
+    .dt-header-nav-dropdown-button {
+      background-color: @color-dark-fade-1;
+      color: @color-light;
+    }
+  }
+
+  .dt-header-nav-dropdown-button {
+    .header-section();
+
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .dt-header-nav-dropdown-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+
+    .dt-header-nav-dropdown-list-item {
+      white-space: nowrap;
+      display: block;
+
+      .dt-header-nav-dropdown-list-item-a {
+        display: block;
+        line-height: 40px;
+        padding: @header-item-padding;
+        text-decoration: none;
+        color: @color-light;
+        background-color: @color-dark-fade-2;
+
+        &:hover {
+          background-color: @color-dark-fade-1;
+        }
+      }
+    }
+  }
 }

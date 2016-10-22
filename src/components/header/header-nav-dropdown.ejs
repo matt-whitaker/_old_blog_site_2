@@ -1,0 +1,12 @@
+<li class="dt-header-nav-dropdown">
+    <a class="dt-header-nav-dropdown-button"><%- title %></a>
+    <ul class="dt-header-nav-dropdown-list">
+        <% links.forEach(function (link) { %>
+        <li class="dt-header-nav-dropdown-list-item">
+            <a class="dt-header-nav-dropdown-list-item-a" href="<%- link.href %>">
+                <%- link.title %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+</li>
