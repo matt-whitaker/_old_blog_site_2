@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%- config.title %><%- page.title ? ' - ' + page.title : '' %></title>
+        <script src="<%- theme.fontawesome.font %>"></script>
+        <link href='<%- theme.google.fonts %>' rel='stylesheet' type='text/css'>
+        <%- css('/css/app.css') %>
+    </head>
+
+    <body class="dt-body">
+        <%- partial('components/header/header.ejs') %>
+    </body>
+</html>

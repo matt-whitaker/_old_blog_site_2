@@ -1,0 +1,65 @@
+@import "./../../_includes/colors.less";
+@import "./../../_includes/fonts.less";
+@import "./../../_includes/functions.less";
+@import "./../../_includes/layout.less";
+
+#dt-header-title {
+  text-decoration: none;
+}
+
+.dt-header-title {
+  .header-section();
+
+  line-height: @header-height;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: @font-sans-serif;
+  letter-spacing: .065em;
+  color: @color-dark;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+
+  .dt-header-title-word {
+    display: inline-block;
+  }
+
+  .dt-header-title-word:first-child {
+    transform: translateY(-4px);
+  }
+
+  .dt-header-title-word:last-child {
+    transform: translateY(4px);
+  }
+
+  &:hover {
+    background-color: @color-dark-fade-1;
+    color: @color-light;
+
+    .dt-header-title-word {
+      transition: all 200ms;
+
+      &:first-child, &:last-child {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &:after {
+    background-color: @color-light;
+    box-shadow: 0 0 15px 8px @color-light;
+    content: '';
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 150%;
+    transform: rotate(10deg);
+    width: 100%;
+    z-index: 10;
+  }
+
+  &:hover:after {
+    top: -150%;
+    transition: top 600ms;
+  }
+}
