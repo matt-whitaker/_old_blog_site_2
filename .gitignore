@@ -7,6 +7,8 @@ db.json
 images
 source
 .env
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 
 Icon*
 .DS_Store
