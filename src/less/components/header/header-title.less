@@ -10,10 +10,8 @@
 .dt-header-title {
   .header-section();
 
-  line-height: @header-height;
-  font-size: 28px;
+  font-size: @header-font-size;
   font-weight: 600;
-  font-family: @font-sans-serif;
   letter-spacing: .065em;
   color: @color-dark;
   overflow: hidden;
@@ -24,12 +22,14 @@
     display: inline-block;
   }
 
+  @offset: 8px;
+
   .dt-header-title-word:first-child {
-    transform: translateY(-4px);
+    transform: translateY(-@offset);
   }
 
   .dt-header-title-word:last-child {
-    transform: translateY(4px);
+    transform: translateY(@offset);
   }
 
   &:hover {

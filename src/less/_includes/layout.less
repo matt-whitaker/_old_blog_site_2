@@ -1,8 +1,15 @@
+@import "colors.less";
+@import "fonts.less";
+@import "functions.less";
+
 // HEADER STYLES //
 
 // The height of the affixed header
+@header-font-size: 28px;
 @header-height: 50px;
 @header-border-width: 2px;
 .header-section() {
+  line-height: @header-height;
+  font-family: @font-sans-serif;
   padding: 0 20px;
 }
