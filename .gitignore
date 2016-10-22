@@ -1,4 +1,5 @@
-.idea/
+_old/
+
 node_modules/
 themes/
 public/
