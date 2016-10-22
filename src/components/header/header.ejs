@@ -1,6 +1,6 @@
 <header class="dt-header">
-    <%- partial('header-title.ejs') %>
-    <%- partial('header-subtitle.ejs') %>
-    <%- partial('header-nav.ejs') %>
+    <%- partial('header-title.ejs', { title: config.title }) %>
+    <%- partial('header-subtitle.ejs', { subtitle: config.subtitle }) %>
+    <%- partial('header-nav.ejs', { links: theme.links }) %>
     <%- partial('header-social.ejs') %>
 </header>
