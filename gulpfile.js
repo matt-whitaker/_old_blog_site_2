@@ -19,9 +19,8 @@ const download = require('./utils/download.js');
 
 const SRC_ROOT = 'src/';
 const EJS_GLOB = `${SRC_ROOT}**/*.ejs`;
-const LESS_RESET_GLOB = `${SRC_ROOT}_3rd-party/reset.less`;
-const LESS_GLOB = `${SRC_ROOT}**/*.less`;
-const LESS_EXCL_GLOB = `!${SRC_ROOT}_3rd-party/font-awesome/**/*.less`;
+const LESS_RESET_GLOB = `${SRC_ROOT}less/_3rd-party/reset.less`;
+const LESS_GLOB = `${SRC_ROOT}less/**/*.less`;
 
 const DEST_ROOT = 'themes/dt/';
 const DEST_LAYOUT_PATH = `${DEST_ROOT}layout/`;
@@ -67,7 +66,7 @@ gulp.task('copy:ejs', () => {
 });
 
 gulp.task('compile:less', () => {
-  return gulp.src([LESS_RESET_GLOB, LESS_GLOB, LESS_EXCL_GLOB])
+  return gulp.src([LESS_RESET_GLOB, LESS_GLOB])
     .pipe(less(LESS_GLOB))
     .pipe(sourcemaps.init())
     .pipe(concat(DEST_CSS_FILENAME))

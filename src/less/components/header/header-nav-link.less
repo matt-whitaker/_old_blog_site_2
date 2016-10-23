@@ -1,0 +1,23 @@
+@import "./../../_includes/colors.less";
+@import "./../../_includes/fonts.less";
+@import "./../../_includes/functions.less";
+@import "./../../_includes/layout.less";
+
+.dt-header-nav-link {
+
+
+  .dt-header-nav-link-a {
+    .header-section();
+    .header-link();
+
+    display: block;
+    color: @color-dark;
+    background-color: @color-light;
+    font-size: 20px;
+
+    &:hover {
+      background-color: @color-dark-fade-1;
+      color: @color-light;
+    }
+  }
+}

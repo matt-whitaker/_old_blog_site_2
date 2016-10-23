@@ -1,0 +1,11 @@
+<nav class="dt-header-nav">
+    <ul class="dt-header-nav-list">
+        <% links.forEach(function (link) { %>
+        <% if (link.href) { %>
+        <%- partial('header-nav-link.ejs', link) %>
+        <% } else if (link.links) { %>
+        <%- partial('header-nav-dropdown.ejs', link) %>
+        <% } %>
+        <% }); %>
+    </ul>
+</nav>

@@ -1,0 +1,36 @@
+@import "./../../_includes/colors.less";
+@import "./../../_includes/fonts.less";
+@import "./../../_includes/functions.less";
+@import "./../../_includes/layout.less";
+
+.dt-header-social {
+  color: @color-dark-fade-2;
+  font-family: @font-awesome;
+  font-size: 20px;
+  display: flex;
+
+  .dt-header-social-list-item {
+    .fa {
+      .header-link();
+
+      line-height: @header-height;
+      margin: @header-item-padding;
+      margin-left: 0;
+
+      transform: scale(1);
+      transition: all 75ms ease;
+      transform-origin: 28%;
+
+      color: @color-dark-fade-2;
+
+      display: inline-block;
+      font-size: 20px;
+
+
+      &:hover {
+        transform: scale(1.7);
+        color: @color-dark;
+      }
+    }
+  }
+}
