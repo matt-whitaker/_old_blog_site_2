@@ -1,0 +1,51 @@
+@import './../../_includes/layout.less';
+@import './../../_includes/colors.less';
+@import './../../_includes/fonts.less';
+@import './../../_includes/functions.less';
+
+.dt-image-card {
+  display: block;
+  margin: 0 2%;
+  flex-basis: 29.1%;
+
+  align-self: stretch;
+
+  background-color: @color-light;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  box-shadow: 2px 2px 4px 1px @color-dark-fade-1;
+  border-radius: 3px 3px 3px 3px;
+
+  font-size: 20px;
+  font-family: @font-sans-serif;
+  text-align: center;
+
+  position: relative;
+  cursor: pointer;
+  z-index: 9;
+
+  transition: all 75ms;
+
+  &:hover {
+    transform: scale(1.15);
+    z-index: 20;
+  }
+
+  > img {
+    max-width: 100%;
+    display: block;
+    margin: 0;
+  }
+
+  p, h2 {
+    padding: 10px 20px;
+  }
+
+  h2 {
+    font-family: @font-sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
