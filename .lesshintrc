@@ -1,0 +1,14 @@
+{
+    "fileExtensions": [".less", ".css"],
+
+    "excludedFiles": ["reset.less"],
+
+    "spaceAfterPropertyColon": {
+        "enabled": true,
+        "style": "one_space" // Comments are allowed
+    },
+
+    "zeroUnit": {
+        "style": "no_unit"
+    }
+}
