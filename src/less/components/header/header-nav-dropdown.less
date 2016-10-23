@@ -25,10 +25,10 @@
 
   .dt-header-nav-dropdown-button {
     .header-section();
+    .header-link();
 
     font-size: 20px;
     display: block;
-    text-decoration: none;
   }
 
   .dt-header-nav-dropdown-list {
@@ -46,10 +46,11 @@
       display: block;
 
       .dt-header-nav-dropdown-list-item-a {
+        .header-link();
+
         display: block;
         line-height: 40px;
         padding: @header-item-padding;
-        text-decoration: none;
         color: @color-light;
         background-color: @color-dark-fade-2;
 
