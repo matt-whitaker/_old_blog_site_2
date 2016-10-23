@@ -1,0 +1,53 @@
+@import "./../../_includes/colors.less";
+@import "./../../_includes/fonts.less";
+@import "./../../_includes/functions.less";
+@import "./../../_includes/layout.less";
+
+.dt-article-header {
+  border-bottom: 2px solid @color-dark;
+  font-family: @font-sans-serif;
+  z-index: 2;
+  position: relative;
+  height: @banner-height;
+  width: 100%;
+  box-sizing: border-box;
+  background-size: 100%;
+
+  .dt-article-header-title,
+  .dt-article-header-blurb,
+  .dt-article-header-datetime {
+    position: absolute;
+    right: 25px;
+  }
+
+  .dt-article-header-title,
+  .dt-article-header-blurb {
+    color: @color-light;
+    text-shadow: 1px 1px 3px @color-dark-fade-2;
+  }
+
+  .dt-article-header-title {
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 500;
+    bottom: 25px;
+  }
+
+  .dt-article-header-blurb {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    text-align: right;
+    line-height: 1.2em;
+    font-weight: 300;
+  }
+
+  .dt-article-header-datetime {
+      bottom: -55px;
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 30px;
+      color: @color-dark-alt-fade-1;
+      text-align: right;
+  }
+}

@@ -1,0 +1,31 @@
+<%
+const isPost = page.date && page.layout === 'post';
+const hasTitle = !!page.title;
+const hasBlurb = !!page.blurb;
+
+const headerStyle = [
+    page.image ? `background-image: url('${page.image}'); ` : ' '
+].join('');
+%>
+
+<% if (!page.suppress_header) { %>
+<header class="dt-article-header<%- isPost ? ' date-shown' : '' %>" style="<%- headerStyle %>">
+    <% if (hasBlurb && !isPost) { %>
+    <section class="dt-article-header-blurb">
+        <p><%- page.blurb %></p>
+    </section>
+    <% } %>
+
+    <% if (hasTitle) { %>
+    <h1 class="dt-article-header-title"><%- page.title %></h1>
+    <% } %>
+
+    <% if (isPost) { %>
+    <h2 class="dt-article-header-datetime">
+        <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished">
+            <%= date(page.date, 'MMM Do, YYYY') %>
+        </time>
+    </h2>
+    <% } %>
+</header>
+<% } %>
