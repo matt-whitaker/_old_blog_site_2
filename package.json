@@ -12,10 +12,11 @@
     "test:lint": "lesshint -c .lesshintrc src/less/",
     "test": "npm run test:lint",
     "server": "hexo server -p 80",
-    "start": "npm run generate && chokidar 'src/**/*' -c 'npm run generate'"
+    "start": "npm run generate && chokidar 'src/**/*' -c 'npm run generate'",
+    "deploy": "npm run generate && gulp deploy"
   },
   "hexo": {
-    "version": "3.2.2"
+    "version": "3.3.8"
   },
   "dependencies": {
     "dotenv": "^2.0.0",
@@ -36,13 +37,20 @@
     "request": "^2.74.0"
   },
   "devDependencies": {
+    "aws-sdk": "^2.94.0",
     "chokidar-cli": "^1.2.0",
+    "colors": "^1.1.2",
+    "config": "^1.26.1",
     "del": "^2.2.1",
+    "file-type": "^5.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.3.0",
     "gulp-less": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
     "gulp-sourcemaps": "^1.6.0",
-    "lesshint": "^2.1.1"
+    "html-comments": "^0.5.0",
+    "lesshint": "^2.1.1",
+    "request-promise": "^4.2.1"
   }
 }

@@ -6,12 +6,15 @@ if (['development', 'production'].every((e) => process.env.NODE_ENV === e)) {
 
 const del = require('del');
 
+const sequence = require('gulp-sequence');
 const gulp = require('gulp');
 const less = require('gulp-less');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const watch = require('gulp-watch');
 const Hexo = require('hexo');
+
+const deploy = require('./scripts/deploy');
 
 require('dotenv').config();
 
@@ -98,3 +101,9 @@ gulp.task('build:watch', [
   'compile:less',
   'retrieve:assets'
 ]);
+
+const config = {
+  src: PUBLIC_ROOT,
+};
+
+gulp.task('deploy', deploy(config));

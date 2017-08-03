@@ -2,13 +2,26 @@
 @import (reference) "fonts.less";
 @import (reference) "functions.less";
 
+// LAYOUT STYLES //
+@page-max-width: 1280px;
+.page-constraint() {
+  @media(min-width: @page-max-width) {
+    width: @page-max-width;
+    margin: 0 auto;
+  }
+
+  @media(max-width: @page-max-width) {
+    width: 100%; 
+  }
+}
+
 // HEADER STYLES //
 
 // The height of the affixed header
 @header-font-size: 28px;
 @header-height: 50px;
 @header-border-width: 2px;
-@header-item-padding: 0 25px;
+@header-item-padding: 0 20px;
 .header-section() {
   line-height: @header-height;
   font-family: @font-sans-serif;
