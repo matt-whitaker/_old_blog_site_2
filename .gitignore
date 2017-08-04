@@ -1,11 +1,8 @@
 _old/
 
 node_modules/
-themes/
 public/
 db.json
-images
-source
 .env
 **/.idea/workspace.xml
 **/.idea/tasks.xml
