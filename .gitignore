@@ -9,3 +9,5 @@ db.json
 
 Icon*
 .DS_Store
+
+themes/**/*.css

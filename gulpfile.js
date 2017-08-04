@@ -38,30 +38,30 @@ gulp.task('clean:assets', () => {
   return del([ './source' ]);
 });
 
-if (process.env.NODE_ENV === 'production') {
-  gulp.task('retrieve:assets', ['clean:assets'], () => {
-    return download();
-  });
-} else {
-  // copy the assets from the depth of the machine... ie my dropbox folder
-  gulp.task('retrieve:assets', ['clean:assets'], () => {
-    const copyAssets = () => (new Promise((res, rej) => {
-      gulp.src(['**/*'], { cwd: process.env.DROPBOX_PATH })
-        .pipe(gulp.dest('./'))
-        .on('end', res)
-        .on('error', (err) => console.error(err) || rej(err));
-    }));
-
-    const moveConfig = () => (new Promise((res, rej) => {
-      gulp.src('config.')
-        .pipe(gulp.dest('./'))
-        .on('end', res)
-        .on('error', (err) => console.error(err) || rej(err));
-    }));
-
-    return copyAssets().then(moveConfig);
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   gulp.task('retrieve:assets', ['clean:assets'], () => {
+//     return download();
+//   });
+// } else {
+//   // copy the assets from the depth of the machine... ie my dropbox folder
+//   gulp.task('retrieve:assets', ['clean:assets'], () => {
+//     const copyAssets = () => (new Promise((res, rej) => {
+//       gulp.src(['**/*'], { cwd: process.env.DROPBOX_PATH })
+//         .pipe(gulp.dest('./'))
+//         .on('end', res)
+//         .on('error', (err) => console.error(err) || rej(err));
+//     }));
+//
+//     const moveConfig = () => (new Promise((res, rej) => {
+//       gulp.src('config.')
+//         .pipe(gulp.dest('./'))
+//         .on('end', res)
+//         .on('error', (err) => console.error(err) || rej(err));
+//     }));
+//
+//     return copyAssets().then(moveConfig);
+//   });
+// }
 
 gulp.task('copy:ejs', () => {
   return gulp.src(EJS_GLOB)
