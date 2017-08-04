@@ -14,29 +14,29 @@ social:
 # Nav Links
 links:
   - title: About
-    href: /about/index.html
+    href: /about
   - title: Archive
-    href: /archive/index.html
+    href: /archive
   - title: Projects
     links:
       - title: Project 1
-        href: /posts/hello-world/index.html
+        href: /posts/hello-world
       - title: Disjointed Thinking
-        href: /work/disjointed-thinking/index.html
+        href: /work/disjointed-thinking
       - title: Want 2 Hack
-        href: /work/want-2-hack/index.html
+        href: /work/want-2-hack
       - title: More...
-        href: /work/index.html
+        href: /work
   - title: Photos
-    href: /photos/index.html
+    href: /photos
 
 # Homepage Highlights
 highlights:
-  - href: about/index.html
+  - href: about
     icon:
-  - href: work/index.html
+  - href: work
     icon:
-  - href: work/disjointed-thinking/index.html
+  - href: work/disjointed-thinking
     icon:
 
 homepage:

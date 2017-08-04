@@ -3,16 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "copy:ejs": "gulp copy:ejs",
-    "compile:less": "gulp compile:less",
-    "clean": "gulp clean && hexo clean",
-    "download": "gulp retrieve:assets",
-    "build": "npm run clean && npm run download && gulp build",
+    "less": "gulp less",
+    "clean": "hexo clean",
+    "build": "npm run clean && gulp build",
     "generate": "npm run build && hexo generate",
-    "test:lint": "lesshint -c .lesshintrc src/less/",
     "test": "npm run test:lint",
-    "server": "hexo server -p 80",
-    "start": "npm run generate && chokidar 'src/**/*' -c 'npm run generate'",
+    "test:lint": "lesshint -c .lesshintrc src/less/",
+    "server": "hexo server -p 8080",
+    "start": "npm run generate",
     "deploy": "npm run generate && gulp deploy"
   },
   "hexo": {
